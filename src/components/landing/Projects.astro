@@ -9,14 +9,14 @@ import projects from '../../config/projects.json';
           <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Una colección de desarrollos web creados con dedicación y detalle.  
               Cada proyecto refleja una solución única, pensada para ofrecer diseño atractivo, funcionalidad sólida y rendimiento óptimo.</p>
       </div> 
-      <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+      <div class="grid gap-8 mb-6 lg:mb-16 xl:grid-cols-2">
 
         {
             projects.map((project) => (
-                <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+                <div class="items-stretch bg-gray-50 rounded-lg shadow overflow-hidden sm:flex dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
-                        <div class="w-full sm:w-64 h-80 shrink-0">
-                            <img class="w-full h-full object-cover rounded-lg sm:rounded-none sm:rounded-l-lg" src={project.ruta_imagen} alt={project.title}/>
+                        <div class="w-full h-56 sm:w-64 sm:h-full sm:min-h-80 shrink-0">
+                            <img class="w-full h-full object-cover rounded-lg sm:rounded-none sm:rounded-l-lg" src={`${import.meta.env.BASE_URL}/${project.ruta_imagen}`} alt={project.title}/>
                         </div>
                     </a>
                     <div class="p-5 flex flex-col">

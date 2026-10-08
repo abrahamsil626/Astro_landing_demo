@@ -1,43 +1,52 @@
-# Astro Starter Kit: Minimal
+# Astro Landing Demo
 
-```sh
-npm create astro@latest -- --template minimal
+Landing page de **portafolio de proyectos web** hecha con Astro y Tailwind CSS: una página estática, rápida y adaptable que presenta una selección de proyectos con su descripción e imagen.
+
+> **Prueba el proyecto en vivo:** [abrahamsil626.github.io/Astro_landing_demo](https://abrahamsil626.github.io/Astro_landing_demo/)
+
+## Funcionalidad
+
+* Interfaz íntegramente **en español**.
+* Secciones: Hero, Más información, Características, Acerca de y Proyectos.
+* Contenido de proyectos y características cargado desde archivos JSON (`src/config/`), sin tocar los componentes.
+* Diseño adaptable (responsive) con soporte de modo oscuro.
+* Sitio 100 % estático, publicado en GitHub Pages.
+
+## Stack
+
+Astro 5 · Tailwind CSS v4 · GitHub Pages.
+
+## Empezar
+
+```bash
+npm install
+npm run dev        # http://localhost:4321/Astro_landing_demo/
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+| Script | Qué hace |
+|--------|----------|
+| `npm run dev` | Servidor de desarrollo |
+| `npm run build` | Build de producción en `dist/` |
+| `npm run preview` | Sirve localmente el build |
+| `npm run deploy` | Publica `dist/` en GitHub Pages |
 
-## 🚀 Project Structure
+> El sitio usa `base: '/Astro_landing_demo'`, por eso la ruta local incluye ese prefijo. Las imágenes de `public/` se referencian con `import.meta.env.BASE_URL`.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Estructura
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+public/
+  images/       Imágenes de proyectos e ilustración del Hero
+src/
+  components/   Footer y landing/ (Hero, More, Features, About, Projects)
+  config/       projects.json y features.json (contenido editable)
+  layouts/      Layout base
+  pages/        index y about
+  styles/       Estilos globales
+.github/
+  workflows/    Despliegue a GitHub Pages
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Sistema de diseño
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Estilos con utilidades de Tailwind CSS v4 (integrado vía `@tailwindcss/vite`), con variantes `dark:` para el modo oscuro y estilos globales en `src/styles/`.

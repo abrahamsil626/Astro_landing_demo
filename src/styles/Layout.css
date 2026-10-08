@@ -1,4 +1,5 @@
 body {
     background-color: #202020;
-    color: whitesmoke
+    color: whitesmoke;
+    overflow-x: hidden;
 }
